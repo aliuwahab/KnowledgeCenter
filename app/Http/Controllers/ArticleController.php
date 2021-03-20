@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Events\ArticleViewed;
 use App\Http\Requests\CreateArticleRequest;
-use App\Http\Requests\ShowArticleRequest;
 use App\Http\Resources\ArticleResource;
 use App\Http\Traits\RespondsWithHttpStatus;
 use App\Models\Article;
@@ -32,7 +31,7 @@ class ArticleController extends Controller
         return $this->success('Articles Retrieved Successfully', ArticleResource::collection($articles));
     }
 
-    public function store(CreateArticleRequest  $createArticleRequest): Response
+    public function store(CreateArticleRequest $createArticleRequest): Response
     {
         $validatedData = $createArticleRequest->validated();
         $article = $this->articleRepository->create($validatedData['title'], $validatedData['body'], $validatedData['categories']);
@@ -47,15 +46,4 @@ class ArticleController extends Controller
 
         return $this->success('Article Retrieved Successfully', new ArticleResource($article));
     }
-
-
-//    public function show(ShowArticleRequest $showArticleRequest): Response
-//    {
-//        $articleId = $showArticleRequest->get('articleId');
-//        $article = $this->articleRepository->find($articleId);
-//
-//        ArticleViewed::dispatch($articleId, $showArticleRequest->ip());
-//
-//        return $this->success('Article Retrieved Successfully', new ArticleResource($article));
-//    }
 }

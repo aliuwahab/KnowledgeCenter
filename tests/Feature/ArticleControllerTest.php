@@ -2,9 +2,11 @@
 
 namespace Tests\Feature;
 
+use App\Events\ArticleViewed;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Event;
 use Tests\TestCase;
 
 class ArticleControllerTest extends TestCase
@@ -38,20 +40,22 @@ class ArticleControllerTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_can_get_a_article()
+    public function test_can_get_an_article_and_it_fires_a_view_event()
     {
+        Event::fake();
         $article = Article::factory()->create();
 
         $response = $this->get(route('articles.show', $article));
 
-        $response->assertStatus(200);
+        $response->assertStatus(200)->assertJsonFragment([$article->title]);
+        Event::assertDispatched(ArticleViewed::class);
     }
 
-    public function test_can_get_all_articles_wihout_search()
+    public function test_can_get_all_articles_without_search()
     {
         $numberOfCreatedArticles = 10;
-        $categories = Category::factory()->count(2)->create();
-        Article::factory()->count($numberOfCreatedArticles)->hasAttached($categories)->create();
+        Article::factory()->count($numberOfCreatedArticles)
+            ->hasAttached(Category::factory()->count(2)->create())->create();
 
         $response = $this->get(route('articles.index'));
 
@@ -61,14 +65,15 @@ class ArticleControllerTest extends TestCase
 
     public function test_can_search_articles_based_on_filters()
     {
-        $this->markTestSkipped("TODO: searching test");
-        $numberOfCreatedArticles = 10;
-        $categories = Category::factory()->count(2)->create();
-        Article::factory()->count($numberOfCreatedArticles)->hasAttached($categories)->create();
+        $searchTerm = "SearchTerm";
+        $searchArticle = Article::factory()->create(['title' => $searchTerm]);
 
-        $response = $this->get(route('articles.index'));
+        Article::factory()->count(3)->hasAttached(Category::factory()->count(2)->create())->create();
 
-        $response->assertStatus(200);
-        $response->assertJsonCount($numberOfCreatedArticles, 'data');
+        $response = $this->get(route('articles.index', ['title' => $searchTerm]));
+
+        $response->assertStatus(200)
+            ->assertJsonCount(1, 'data')
+            ->assertJsonFragment(['title' => $searchArticle->title]);
     }
 }

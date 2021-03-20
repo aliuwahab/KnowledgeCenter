@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="282e12ea-882e-4abf-a75b-1ea04dbd8669" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/TrengoKnowledgeCenter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TrengoKnowledgeCenter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Traits/RespondsWithHttpStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Traits/RespondsWithHttpStatus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ArticleFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ArticleFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/RateFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/RateFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ViewFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ViewFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ArticleControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ArticleControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/RateControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/RateControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/Filters/Article/SortTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Filters/Article/SortTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,25 +170,30 @@
       <recent name="$PROJECT_DIR$/app/Filters" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.MaximumDailyRatingTest.test_if_it_has_not_exceeded_maximum_daily_rating_it_returns_true">
-    <configuration name="ArticleRepositoryTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\Repositories\ArticleRepositoryTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/Repositories/ArticleRepositoryTest.php" scope="Class" />
+  <component name="RunManager" selected="PHPUnit.RateControllerTest.test_it_rates_an_article_if_validation_passes">
+    <configuration name="ArticleControllerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 8.0" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\ArticleControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ArticleControllerTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="MaximumDailyRatingTest.test_if_has_not_exceeded_maximum_daily_rating_it_returns_true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\Validators\MaximumDailyRatingTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/Validators/MaximumDailyRatingTest.php" method="test_if_has_not_exceeded_maximum_daily_rating_it_returns_true" scope="Method" />
+    <configuration name="ArticleControllerTest.test_can_get_all_articles_without_search" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ArticleControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ArticleControllerTest.php" method="test_can_get_all_articles_without_search" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="MaximumDailyRatingTest.test_if_it_has_not_exceeded_maximum_daily_rating_it_returns_true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\Validators\MaximumDailyRatingTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/Validators/MaximumDailyRatingTest.php" method="test_if_it_has_not_exceeded_maximum_daily_rating_it_returns_true" scope="Method" />
+    <configuration name="ArticleControllerTest.test_can_search_articles_based_on_filters" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ArticleControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ArticleControllerTest.php" method="test_can_search_articles_based_on_filters" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="MaximumDailyRatingTest.test_if_maximum_daily_rating_is_exceeded_it_returns_false" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\Validators\MaximumDailyRatingTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/Validators/MaximumDailyRatingTest.php" method="test_if_maximum_daily_rating_is_exceeded_it_returns_false" scope="Method" />
+    <configuration name="RateControllerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\RateControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/RateControllerTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="RateRepositoryTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\Repositories\RateRepositoryTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/Repositories/RateRepositoryTest.php" scope="Class" />
+    <configuration name="RateControllerTest.test_it_rates_an_article_if_validation_passes" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\RateControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/RateControllerTest.php" method="test_it_rates_an_article_if_validation_passes" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -206,11 +202,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.MaximumDailyRatingTest.test_if_it_has_not_exceeded_maximum_daily_rating_it_returns_true" />
-        <item itemvalue="PHPUnit.MaximumDailyRatingTest.test_if_has_not_exceeded_maximum_daily_rating_it_returns_true" />
-        <item itemvalue="PHPUnit.MaximumDailyRatingTest.test_if_maximum_daily_rating_is_exceeded_it_returns_false" />
-        <item itemvalue="PHPUnit.RateRepositoryTest" />
-        <item itemvalue="PHPUnit.ArticleRepositoryTest" />
+        <item itemvalue="PHPUnit.RateControllerTest.test_it_rates_an_article_if_validation_passes" />
+        <item itemvalue="PHPUnit.RateControllerTest" />
+        <item itemvalue="PHPUnit.ArticleControllerTest" />
+        <item itemvalue="PHPUnit.ArticleControllerTest.test_can_search_articles_based_on_filters" />
+        <item itemvalue="PHPUnit.ArticleControllerTest.test_can_get_all_articles_without_search" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +220,7 @@
       <updated>1615557179410</updated>
       <workItem from="1615557181841" duration="862000" />
       <workItem from="1615577713554" duration="43760000" />
-      <workItem from="1616180316911" duration="14385000" />
+      <workItem from="1616180316911" duration="15395000" />
     </task>
     <servers />
   </component>

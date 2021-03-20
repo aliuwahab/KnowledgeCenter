@@ -22,8 +22,8 @@ class RateController extends Controller
     public function store(RateArticleRequest $rateArticleRequest)
     {
         $dailyRatingCheck = resolve(HasNotExceededMaximumDailyRating::class);
-        $dailyMaximumExceeded = $dailyRatingCheck->passes($rateArticleRequest->ip());
-        if ($dailyMaximumExceeded) {
+        $dailyMaximumNotExceeded = $dailyRatingCheck->passes($rateArticleRequest->ip());
+        if (! $dailyMaximumNotExceeded) {
            return $this->failure($dailyRatingCheck->message());
         }
 

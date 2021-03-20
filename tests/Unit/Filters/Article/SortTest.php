@@ -5,7 +5,6 @@ namespace Tests\Unit\Filters\Article;
 
 use App\Models\Article;
 use App\Models\View;
-use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
