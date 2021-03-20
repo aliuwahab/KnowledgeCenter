@@ -9,7 +9,7 @@ can be measured by its ratings and views.
 3. MysQL >= 8.0 (https://www.mysql.com/downloads/)
 4. Postman (https://www.postman.com/downloads/)
 
-### How to setup
+### How to Setup
 
 1. After cloning, CD into root of project and run `composer install`
 2. Log into mysql `mysql -u root -p` and provide the password if it asks for and create database `trengo_db`
@@ -19,3 +19,8 @@ can be measured by its ratings and views.
 6. in the root of project run `php artisan serve` and take not of the port and url is running on. Copy the URL
 7. Clone APIs documentation using postman URL: `https://www.getpostman.com/collections/35792eda26ef196cb587` and import them into postman. (Check the file menu to see the import option for your postman app)
 8. Copy the URL you see at point 6, and put it as the `INITIAL VALUE` and `CURRENT VALUE` for the environment variable `API_BASE_URL` for the postman collection you imported at the point 7.
+
+
+#### Useful Tips
+1. Make sure to run `php artisan queue:work` to have all your jobs processed
+2. Visit Horizon on: `{BASE_URL}/horizon/dashboard`
