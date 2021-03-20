@@ -6,5 +6,5 @@ use Illuminate\Support\Collection;
 
 interface RateRepositoryInterface
 {
-    public function rate(int $articleId, int $stars): Model;
+    public function rate(int $articleId, int $stars, string $userIpAddress): Model;
 }

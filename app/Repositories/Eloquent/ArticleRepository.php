@@ -3,35 +3,45 @@ namespace App\Repositories\Eloquent;
 
 use App\Models\Article;
 use App\Repositories\ArticleRepositoryInterface;
-use Illuminate\Support\Collection;
+use Illuminate\Pagination\Paginator;
 
 class ArticleRepository implements ArticleRepositoryInterface
 {
     private Article $article;
 
+    /**
+     * ArticleRepository constructor.
+     * @param Article $article
+     */
     public function __construct(Article $article)
     {
         $this->article = $article;
     }
 
     /**
-     * @return Collection
+     * @param array $filter
+     * @param int $paginateBy
+     * @return Paginator
      */
-    public function all(): Collection
+    public function all(array $filter = [], int $paginateBy = 50): Paginator
     {
-        return $this->article::all();
+        return $this->article::with(['categories', 'views', 'ratings'])->filterBy($filter)->simplePaginate($paginateBy);
     }
 
     /**
-     * @param array $validated
+     * @param string $title
+     * @param string $body
+     * @param array $categories
      * @return Article
      */
-    public function create(array $validated): Article
+    public function create(string $title, string $body, array $categories): Article
     {
         $article = new Article();
-        $article->title = $validated['title'];
-        $article->body = $validated['body'];
+        $article->title = $title;
+        $article->body = $body;
         $article->save();
+
+        $article->categories()->sync($categories);
 
         return $article;
     }
