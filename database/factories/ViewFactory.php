@@ -25,7 +25,7 @@ class ViewFactory extends Factory
     {
         return [
             'ip_address' => $this->faker->ipv6,
-            'article_id' => Article::factory()->count(1)->create()
+            'article_id' => Article::factory()->create()
         ];
     }
 }
