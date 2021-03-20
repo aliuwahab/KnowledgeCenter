@@ -8,6 +8,7 @@ can be measured by its ratings and views.
 2. Composer (and is globally available in your system or you know the path to it ) https://getcomposer.org/download/
 3. MysQL >= 8.0 (https://www.mysql.com/downloads/)
 4. Postman (https://www.postman.com/downloads/)
+4. Install Xdebug (https://xdebug.org/docs/install#pecl): `pecl install xdebug`
 
 ### How to Setup
 
