@@ -3,7 +3,6 @@
 namespace Tests\Unit\Filters\Article;
 
 use App\Models\Article;
-use App\Models\Category;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -23,8 +22,7 @@ class FromTest extends TestCase
         $nonFilteredArticles = Article::factory()->count(3)->create(['created_at' => Carbon::yesterday()]);
         $filteredArticles = Article::factory()->count(3)->create(['created_at' => today()]);
 
-//        $response = $this->get(route('articles.index', ['from' => today()]));
-        $response = $this->get('api/articles?from='.today()->toDateTimeString());
+        $response = $this->get(route('articles.index', ['from' => today()->toDateTimeString()]));
 
         $response->assertStatus(200)
             ->assertJsonCount(3, 'data')

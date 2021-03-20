@@ -23,8 +23,7 @@ class TitleTest extends TestCase
         $nonFilteredArticles = Article::factory()->count(3)->create(['created_at' => Carbon::yesterday()]);
         $filteredArticles = Article::factory()->create(['title' => $searchTerm]);
 
-//        $response = $this->get(route('articles.index', ['from' => today()]));
-        $response = $this->get('api/articles?title='. $searchTerm);
+        $response = $this->get(route('articles.index', ['title' => $searchTerm]));
 
         $response->assertStatus(200)
             ->assertJsonCount(1, 'data')

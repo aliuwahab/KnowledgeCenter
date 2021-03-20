@@ -5,13 +5,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/TrengoKnowledgeCenter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TrengoKnowledgeCenter.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Filters/Article/Sort.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Filters/Article/Sort.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Eloquent/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Eloquent/ArticleRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/Filters/Article/BodyTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Filters/Article/BodyTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/Filters/Article/FromTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Filters/Article/FromTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Unit/Filters/Article/SortTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Filters/Article/SortTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/Filters/Article/TitleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Filters/Article/TitleTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/Filters/Article/ToTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Filters/Article/ToTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,6 +145,7 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
       <path value="$PROJECT_DIR$/vendor/laravel/sail" />
       <path value="$PROJECT_DIR$/vendor/laravel/horizon" />
+      <path value="$PROJECT_DIR$/vendor/predis/predis" />
     </include_path>
   </component>
   <component name="ProjectId" id="1pex5yzrWiDIZnQqBgzZx30vekZ" />
@@ -176,13 +179,8 @@
       <recent name="$PROJECT_DIR$/app/Filters" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.SortTest.test_can_sort_articles_by_number_of_views_decending">
+  <component name="RunManager" selected="PHPUnit.tests">
     <configuration name="ArticleControllerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <CommandLine>
-        <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP 8.0" />
-        </PhpTestInterpreterSettings>
-      </CommandLine>
       <TestRunner class="Tests\Feature\ArticleControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ArticleControllerTest.php" scope="Class" />
       <method v="2" />
     </configuration>
@@ -190,29 +188,29 @@
       <TestRunner class="Tests\Feature\RateControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/RateControllerTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="RateControllerTest.test_it_rates_an_article_if_validation_passes" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\RateControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/RateControllerTest.php" method="test_it_rates_an_article_if_validation_passes" scope="Method" />
+    <configuration name="RateRepositoryTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\Repositories\RateRepositoryTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/Repositories/RateRepositoryTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="SortTest.test_can_sort_articles_by_number_of_views_decending" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\Filters\Article\SortTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/Filters/Article/SortTest.php" method="test_can_sort_articles_by_number_of_views_decending" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="SortTest.test_can_sort_articles_by_popularity_base_on_ratings" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\Filters\Article\SortTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/Filters/Article/SortTest.php" method="test_can_sort_articles_by_popularity_base_on_ratings" scope="Method" />
+    <configuration name="ToTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\Filters\Article\ToTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/Filters/Article/ToTest.php" scope="Class" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <configuration name="tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" directory="$PROJECT_DIR$/tests" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.SortTest.test_can_sort_articles_by_number_of_views_decending" />
-        <item itemvalue="PHPUnit.SortTest.test_can_sort_articles_by_popularity_base_on_ratings" />
+        <item itemvalue="PHPUnit.tests" />
         <item itemvalue="PHPUnit.RateControllerTest" />
         <item itemvalue="PHPUnit.ArticleControllerTest" />
-        <item itemvalue="PHPUnit.RateControllerTest.test_it_rates_an_article_if_validation_passes" />
+        <item itemvalue="PHPUnit.RateRepositoryTest" />
+        <item itemvalue="PHPUnit.ToTest" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +224,7 @@
       <updated>1615557179410</updated>
       <workItem from="1615557181841" duration="862000" />
       <workItem from="1615577713554" duration="43760000" />
-      <workItem from="1616180316911" duration="29712000" />
+      <workItem from="1616180316911" duration="32625000" />
     </task>
     <servers />
   </component>

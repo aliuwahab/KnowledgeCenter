@@ -3,7 +3,6 @@
 namespace Tests\Unit\Filters\Article;
 
 use App\Models\Article;
-use App\Models\Category;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -24,8 +23,7 @@ class BodyTest extends TestCase
         $nonFilteredArticles = Article::factory()->count(3)->create(['created_at' => Carbon::yesterday()]);
         $filteredArticles = Article::factory()->create(['body' => $searchTerm]);
 
-//        $response = $this->get(route('articles.index', ['from' => today()]));
-        $response = $this->get('api/articles?body='. $searchTerm);
+        $response = $this->get(route('articles.index', ['body' => $searchTerm]));
 
         $response->assertStatus(200)
             ->assertJsonCount(1, 'data')

@@ -16,8 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('articles', ArticleController::class)->only(['index', 'show', 'store', 'update', 'destroy']);
-Route::resource('rates', RateController::class)->only(['store']);
+Route::middleware(['throttle'])->group(function () {
+    Route::resource('articles', ArticleController::class)->only(['index', 'show', 'store', 'update', 'destroy']);
+    Route::resource('rates', RateController::class)->only(['store']);
+});
 
 Route::get('/users', function (Request $request) {
     dd("here");

@@ -4,7 +4,6 @@ namespace Tests\Unit\Filters\Article;
 
 
 use App\Models\Article;
-use App\Models\Rate;
 use App\Models\View;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -27,8 +26,7 @@ class SortTest extends TestCase
         View::factory()->count(10)->create(['article_id' => $articleWithHighestViews->id]);
         View::factory()->count(9)->create(['article_id' => $articleWithLowestViews->id]);
 
-//        $response = $this->get(route('articles.index', ['to' => today()]));
-        $response = $this->get('api/articles?sort=trending');
+        $response = $this->get(route('articles.index', ['sort' => 'trending']));
 
         $response->assertStatus(200);
         $data = $response->json()['data'];
