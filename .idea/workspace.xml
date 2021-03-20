@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="282e12ea-882e-4abf-a75b-1ea04dbd8669" name="Default Changelist" comment="" />
+    <list default="true" id="282e12ea-882e-4abf-a75b-1ea04dbd8669" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/TrengoKnowledgeCenter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TrengoKnowledgeCenter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Traits/RespondsWithHttpStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Traits/RespondsWithHttpStatus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ArticleFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ArticleFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/RateFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/RateFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ViewFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ViewFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +35,10 @@
       </list>
     </option>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.0">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
       <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
@@ -57,7 +75,6 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/filp/whoops" />
-      <path value="$PROJECT_DIR$/vendor/laravel/sail" />
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/symfony/routing" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
@@ -128,9 +145,11 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/laravel/sail" />
     </include_path>
   </component>
   <component name="ProjectId" id="1pex5yzrWiDIZnQqBgzZx30vekZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -139,26 +158,61 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Repositories" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/Unit/Filters/Article" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/Unit/Filters/Article" />
+      <recent name="$PROJECT_DIR$/app/Filters/Article" />
       <recent name="$PROJECT_DIR$/app/Repositories" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/Http" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/tests/Unit/Validators" />
+      <recent name="$PROJECT_DIR$/app/Validators" />
+      <recent name="$PROJECT_DIR$/tests/Unit/Filters/Article" />
+      <recent name="$PROJECT_DIR$/tests/Unit/Repositories" />
+      <recent name="$PROJECT_DIR$/app/Filters" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.MaximumDailyRatingTest.test_if_it_has_not_exceeded_maximum_daily_rating_it_returns_true">
+    <configuration name="ArticleRepositoryTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\Repositories\ArticleRepositoryTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/Repositories/ArticleRepositoryTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MaximumDailyRatingTest.test_if_has_not_exceeded_maximum_daily_rating_it_returns_true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\Validators\MaximumDailyRatingTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/Validators/MaximumDailyRatingTest.php" method="test_if_has_not_exceeded_maximum_daily_rating_it_returns_true" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MaximumDailyRatingTest.test_if_it_has_not_exceeded_maximum_daily_rating_it_returns_true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\Validators\MaximumDailyRatingTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/Validators/MaximumDailyRatingTest.php" method="test_if_it_has_not_exceeded_maximum_daily_rating_it_returns_true" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MaximumDailyRatingTest.test_if_maximum_daily_rating_is_exceeded_it_returns_false" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\Validators\MaximumDailyRatingTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/Validators/MaximumDailyRatingTest.php" method="test_if_maximum_daily_rating_is_exceeded_it_returns_false" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="RateRepositoryTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\Repositories\RateRepositoryTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/Repositories/RateRepositoryTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.MaximumDailyRatingTest.test_if_it_has_not_exceeded_maximum_daily_rating_it_returns_true" />
+        <item itemvalue="PHPUnit.MaximumDailyRatingTest.test_if_has_not_exceeded_maximum_daily_rating_it_returns_true" />
+        <item itemvalue="PHPUnit.MaximumDailyRatingTest.test_if_maximum_daily_rating_is_exceeded_it_returns_false" />
+        <item itemvalue="PHPUnit.RateRepositoryTest" />
+        <item itemvalue="PHPUnit.ArticleRepositoryTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -169,7 +223,8 @@
       <option name="presentableId" value="Default" />
       <updated>1615557179410</updated>
       <workItem from="1615557181841" duration="862000" />
-      <workItem from="1615577713554" duration="22858000" />
+      <workItem from="1615577713554" duration="43760000" />
+      <workItem from="1616180316911" duration="14385000" />
     </task>
     <servers />
   </component>

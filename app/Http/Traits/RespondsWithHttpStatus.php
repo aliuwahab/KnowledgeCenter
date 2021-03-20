@@ -6,7 +6,7 @@ use Illuminate\Http\Response;
 
 trait RespondsWithHttpStatus
 {
-    protected function success(string $message, array $data = [], int $status = 200): Response
+    protected function success(string $message, $data = [], int $status = 200): Response
     {
         return response([
             'success' => true,

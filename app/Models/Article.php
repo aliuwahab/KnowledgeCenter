@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Filters\FilterBuilder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -34,5 +35,14 @@ class Article extends Model
     public function views()
     {
         return $this->hasMany(View::class);
+    }
+
+
+    public function scopeFilterBy($query, $filters)
+    {
+        $namespace = 'App\Filters\Article';
+        $filter = new FilterBuilder($query, $filters, $namespace);
+
+        return $filter->apply();
     }
 }

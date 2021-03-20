@@ -6,7 +6,7 @@ use App\Http\Requests\RateArticleRequest;
 use App\Http\Resources\RatingResource;
 use App\Http\Traits\RespondsWithHttpStatus;
 use App\Repositories\RateRepositoryInterface;
-use App\Validators\MaximumDailyRating;
+use App\Validators\HasNotExceededMaximumDailyRating;
 
 class RateController extends Controller
 {
@@ -21,7 +21,7 @@ class RateController extends Controller
 
     public function store(RateArticleRequest $rateArticleRequest)
     {
-        $dailyRatingCheck = resolve(MaximumDailyRating::class);
+        $dailyRatingCheck = resolve(HasNotExceededMaximumDailyRating::class);
         $dailyMaximumExceeded = $dailyRatingCheck->passes($rateArticleRequest->ip());
         if ($dailyMaximumExceeded) {
            return $this->failure($dailyRatingCheck->message());
