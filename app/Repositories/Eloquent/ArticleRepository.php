@@ -16,9 +16,12 @@ class ArticleRepository implements ArticleRepositoryInterface
         $this->article = $article;
     }
 
-    public function all(array $filters = [], int $paginateBy = 3): Paginator
+    public function all(array $filters = [], int $paginateBy = 50): Paginator
     {
-        return $this->article::query()->with(['categories', 'views', 'ratings'])->filterBy($filters)->simplePaginate($paginateBy);
+        $cacheKey = implode("-", array_keys($filters)) .'-'. implode('-', array_values($filters));
+        return Cache::rememberForever($cacheKey, function () use($filters, $paginateBy){
+            return $this->article::query()->with(['categories', 'views', 'ratings'])->filterBy($filters)->simplePaginate($paginateBy);
+        });
     }
 
     public function create(string $title, string $body, array $categories): Article

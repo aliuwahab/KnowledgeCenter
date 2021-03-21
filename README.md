@@ -10,6 +10,7 @@ can be measured by its ratings and views.
 4. Postman (https://www.postman.com/downloads/)
 5. Install Xdebug (https://xdebug.org/docs/install#pecl): `pecl install xdebug`
 6. Install Redis: `brew install redis`
+7. For caching, increase the memory of your php run time in you `php.ini` file. Run `php --ini` to find locate it, and edit the file by adding this line: `memory_limit = 2048M` to the bottom.
 
 ### How to Setup
 
