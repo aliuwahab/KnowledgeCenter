@@ -25,3 +25,7 @@ can be measured by its ratings and views.
 #### Useful Tips
 1. Make sure to run `php artisan queue:work` to have all your jobs processed
 2. Visit Horizon on: `{BASE_URL}/horizon/dashboard`
+
+#### Run Test
+1. Run test `vendor/bin/phpunit`
+2. Generate test coverage report: `vendor/bin/phpunit --coverage-html reports/`
