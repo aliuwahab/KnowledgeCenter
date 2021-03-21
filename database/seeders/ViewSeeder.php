@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Article;
-use App\Models\Category;
 use App\Models\View;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 
 class ViewSeeder extends Seeder
@@ -17,13 +17,21 @@ class ViewSeeder extends Seeder
      */
     public function run()
     {
-        $articles = Article::all();
+        ini_set('memory_limit', '512M');
+        DB::disableQueryLog();
+
+        $articles = Article::limit(50)->get()->pluck('id');
 
         if (! $articles) {
-            $articles = Article::factory()->count(1000)->create();
+            $articles = Article::factory()->count(50)->create()->pluck('id');
         }
 
-        $views = View::factory()->count(500)->make(['article_id' => $articles->random()->id]);
-        DB::table('views')->insert($views->toArray());
+        $total = 100000;
+        $set = 2000;
+
+        for ($created = $set; $created <= $total; $created+= $set) {
+            $views = View::factory()->count($set)->make(['article_id' => Arr::random($articles->toArray())]);
+            DB::table('views')->insert($views->toArray());
+        }
     }
 }
