@@ -17,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['throttle'])->group(function () {
-    Route::resource('articles', ArticleController::class)->only(['index', 'show', 'store', 'update', 'destroy']);
+    Route::resource('articles', ArticleController::class)->only(['index', 'show', 'store']);
     Route::resource('rates', RateController::class)->only(['store']);
 });

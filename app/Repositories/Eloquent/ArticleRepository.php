@@ -4,6 +4,7 @@ namespace App\Repositories\Eloquent;
 use App\Models\Article;
 use App\Repositories\ArticleRepositoryInterface;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Cache;
 
 class ArticleRepository implements ArticleRepositoryInterface
 {
