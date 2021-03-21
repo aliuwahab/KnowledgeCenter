@@ -21,6 +21,8 @@ can be measured by its ratings and views.
 7. Clone APIs documentation using postman URL: `https://www.getpostman.com/collections/35792eda26ef196cb587` and import them into postman. (Check the file menu to see the import option for your postman app)
 8. Copy the URL you see at point 6, and put it as the `INITIAL VALUE` and `CURRENT VALUE` for the environment variable `API_BASE_URL` for the postman collection you imported at the point 7.
 
+#### Caching
+1. This is using Redis Cache. With the composer package `predis/predis`
 
 #### Useful Tips
 1. Make sure to run `php artisan queue:work` to have all your jobs processed
