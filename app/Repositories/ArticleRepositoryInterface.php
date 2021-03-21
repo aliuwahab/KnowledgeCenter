@@ -10,5 +10,5 @@ interface ArticleRepositoryInterface
 
     public function find(int $id): ?Model;
 
-    public function all(array $filter = [], int $paginateBy = 50): Paginator;
+    public function all(array $filters = [], int $paginateBy = 50): Paginator;
 }

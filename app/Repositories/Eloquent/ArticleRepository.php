@@ -4,6 +4,7 @@ namespace App\Repositories\Eloquent;
 use App\Models\Article;
 use App\Repositories\ArticleRepositoryInterface;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Cache;
 
 class ArticleRepository implements ArticleRepositoryInterface
@@ -15,9 +16,12 @@ class ArticleRepository implements ArticleRepositoryInterface
         $this->article = $article;
     }
 
-    public function all(array $filter = [], int $paginateBy = 50): Paginator
+    public function all(array $filters = [], int $paginateBy = 50): Paginator
     {
-        return $this->article::query()->with(['categories', 'views', 'ratings'])->filterBy($filter)->simplePaginate($paginateBy);
+        $cacheKey = implode("-", array_keys($filters)) .'-'. implode('-', array_values($filters));
+        return Cache::remember($cacheKey, 60*60*24, function () use($filters, $paginateBy){
+            return $this->article::query()->with(['categories', 'views', 'ratings'])->filterBy($filters)->simplePaginate($paginateBy);
+        });
     }
 
     public function create(string $title, string $body, array $categories): Article
