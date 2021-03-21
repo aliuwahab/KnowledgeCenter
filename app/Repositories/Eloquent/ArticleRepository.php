@@ -18,8 +18,8 @@ class ArticleRepository implements ArticleRepositoryInterface
 
     public function all(array $filters = [], int $paginateBy = 50): Paginator
     {
-        $cacheKey = implode("-", array_keys($filters)) .'-'. implode('-', array_values($filters));
-        return Cache::rememberForever($cacheKey, function () use($filters, $paginateBy){
+        $cacheKey = implode("-", array_keys($filters)) .'-'. implode('-', array_values($filters)).'-'.$paginateBy;
+        return Cache::remember($cacheKey, 60*60*24, function () use($filters, $paginateBy){
             return $this->article::query()->with(['categories', 'views', 'ratings'])->filterBy($filters)->simplePaginate($paginateBy);
         });
     }
