@@ -8,7 +8,8 @@ can be measured by its ratings and views.
 2. Composer (and is globally available in your system or you know the path to it ) https://getcomposer.org/download/
 3. MysQL >= 8.0 (https://www.mysql.com/downloads/)
 4. Postman (https://www.postman.com/downloads/)
-4. Install Xdebug (https://xdebug.org/docs/install#pecl): `pecl install xdebug`
+5. Install Xdebug (https://xdebug.org/docs/install#pecl): `pecl install xdebug`
+6. Install Redis: `brew install redis`
 
 ### How to Setup
 
@@ -23,6 +24,7 @@ can be measured by its ratings and views.
 
 #### Caching
 1. This is using Redis Cache. With the composer package `predis/predis`
+2. Start redis after installation `brew services start redis`
 
 #### Useful Tips
 1. Make sure to run `php artisan queue:work` to have all your jobs processed
