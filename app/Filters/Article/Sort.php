@@ -17,7 +17,7 @@ class Sort extends QueryFilter implements FilterInterface
 
             $this->query->withCount(['views' => static function($query) use ($startDate, $endDate) {
                 $query->whereBetween('created_at', [$startDate, $endDate]);
-            }]);
+            }])->orderByDesc('views_count');
         }
 
         if (Str::contains($sortType, 'popularity')) {
